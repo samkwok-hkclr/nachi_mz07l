@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: mz07L_description
+    relative_path: robots/mz07L.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/mz07L.srdf
+  CONFIG:
+    author_name: jcyang
+    author_email: jcyang@hkclr.hk
+    generated_timestamp: 1663159594

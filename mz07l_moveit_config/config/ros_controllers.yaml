@@ -1,0 +1,40 @@
+mz07L_controller:
+  type: follow_joint_trajectory/FollowJointTrajectory
+  joints:
+    - joint_base_to_link1
+    - joint_link1_to_link2
+    - joint_link2_to_link3
+    - joint_link3_to_link4
+    - joint_link4_to_link5
+    - joint_link5_to_link6
+  gains:
+    joint_base_to_link1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_link1_to_link2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_link2_to_link3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_link3_to_link4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_link4_to_link5:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_link5_to_link6:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1

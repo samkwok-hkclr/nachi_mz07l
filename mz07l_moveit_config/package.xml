@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>mz07l_moveit_config</name>
+  <version>1.0.0</version>
+
+  <description>mz07L moveit config</description>
+
+  <author email="jcyang@hkclr.hk">jcyang</author>
+  <maintainer email="mskwok@hkclr.hk">mskwok</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>mz07l_description</exec_depend>
+
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+      <build_type>ament_cmake</build_type>
+  </export>
+</package>

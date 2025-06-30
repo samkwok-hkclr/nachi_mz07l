@@ -1,0 +1,23 @@
+controller_names:
+  - mz07l_arm_controller
+
+mz07l_arm_controller:
+  action_ns: follow_joint_trajectory
+  type: FollowJointTrajectory
+  default: true
+  joints:
+    - joint_base_to_link1
+    - joint_link1_to_link2
+    - joint_link2_to_link3
+    - joint_link3_to_link4
+    - joint_link4_to_link5
+    - joint_link5_to_link6
+
+  constraints:
+    stopped_velocity_tolerance: 0.05
+    joint_1: {trajectory: 0.01, goal: 0.01}
+    joint_2: {trajectory: 0.01, goal: 0.01}
+    joint_3: {trajectory: 0.01, goal: 0.01}
+    joint_4: {trajectory: 0.01, goal: 0.01}
+    joint_5: {trajectory: 0.01, goal: 0.01}
+    joint_6: {trajectory: 0.01, goal: 0.01}

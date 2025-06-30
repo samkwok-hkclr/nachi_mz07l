@@ -1,0 +1,13 @@
+controller_list:
+  - name: fake_mz07L_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - joint_base_to_link1
+      - joint_link1_to_link2
+      - joint_link2_to_link3
+      - joint_link3_to_link4
+      - joint_link4_to_link5
+      - joint_link5_to_link6
+initial:  # Define initial robot poses per group
+  - group: arm
+    pose: zero

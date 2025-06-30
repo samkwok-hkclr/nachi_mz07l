@@ -1,0 +1,12 @@
+controller_list:
+  - name: mz07L_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - joint_base_to_link1
+      - joint_link1_to_link2
+      - joint_link2_to_link3
+      - joint_link3_to_link4
+      - joint_link4_to_link5
+      - joint_link5_to_link6

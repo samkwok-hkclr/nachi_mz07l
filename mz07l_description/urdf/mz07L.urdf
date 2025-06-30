@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="mz07L">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_base_link.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link1">
+    <visual>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_link1.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_base_to_link1" type="revolute">
+    <origin xyz="0 0 0.195" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="link1" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" lower="-2.9670" upper="2.9670" velocity="5.2359" />
+  </joint>
+  <link name="link2">
+    <visual>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_link2.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_link1_to_link2" type="revolute">
+    <origin xyz="0.05 0 0.15" rpy="0 0 0" />
+    <parent link="link1" />
+    <child link="link2" />
+    <axis xyz="0 -1 0" />
+    <limit effort="100" lower="-2.3561" upper="1.3962" velocity="4.8869" />
+  </joint>
+  <link name="link3">
+    <visual>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_link3.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_link2_to_link3" type="revolute">
+    <origin xyz="0 0 0.410" rpy="0 0 0" />
+    <parent link="link2" />
+    <child link="link3" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" lower="-2.373648" upper="4.712389" velocity="6.283185" />
+  </joint>
+  <link name="link4">
+    <visual>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_link4.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_link3_to_link4" type="revolute">
+    <origin xyz="0.09 0 0.045" rpy="0 0 0" />
+    <parent link="link3" />
+    <child link="link4" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" lower="-3.316126" upper="3.316126" velocity="9.599311" />
+  </joint>
+  <link name="link5">
+    <visual>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_link5.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_link4_to_link5" type="revolute">
+    <origin xyz="0.350 0 0" rpy="0 0 0" />
+    <parent link="link4" />
+    <child link="link5" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" lower="-2.0943" upper="2.0943" velocity="9.599311" />
+  </joint>
+  <link name="link6">
+    <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_link6.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mz07l_description/meshes/mz07_link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_link5_to_link6" type="revolute">
+    <origin xyz="0.073 0 0" rpy="0 1.570796 0" />
+    <parent link="link5" />
+    <child link="link6" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" lower="-6.283185" upper="6.283185" velocity="17.453293" />
+  </joint>
+</robot>

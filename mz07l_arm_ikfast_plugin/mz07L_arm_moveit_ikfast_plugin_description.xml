@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<library path="libmz07L_arm_moveit_ikfast_plugin">
+  <class name="mz07L_arm/IKFastKinematicsPlugin" type="mz07L_arm::IKFastKinematicsPlugin" base_class_type="kinematics::KinematicsBase">
+    <description>IKFast61 plugin for closed-form kinematics of mz07L arm</description>
+  </class>
+</library>
