@@ -180,6 +180,13 @@
     <axis xyz="0 0 1"/>
   </joint>
 
+  <joint name="camera_joint" type="fixed">
+    <parent link="gripper" />
+    <child link="camera_link" />
+    <origin rpy="0 -1.57079632679 0" xyz="-0.095 0 0.22" />
+  </joint>
+
+  <link name="camera_link" />
 
   <!-- <link name="gripper">
     <visual>
