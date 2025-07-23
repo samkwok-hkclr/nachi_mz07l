@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <robot name="mz07L">
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
   <link name="base_link">
     <visual>
       <geometry>
         <mesh filename="package://mz07l_description/meshes/visual/mz07_base_link.dae" />
       </geometry>
-      <material name="white">
-        <color rgba="0 0 0 0.9"/>
-      </material>
+      <material name="white" />
     </visual>
     <collision>
       <geometry>
@@ -16,14 +19,13 @@
       </geometry>
     </collision>
   </link>
+
   <link name="link1">
     <visual>
       <geometry>
         <mesh filename="package://mz07l_description/meshes/visual/mz07_link1.dae" />
       </geometry>
-      <material name="white">
-        <color rgba="0 0 0 0.9"/>
-      </material>
+      <material name="white" />
     </visual>
     <collision>
       <geometry>
@@ -38,14 +40,13 @@
     <axis xyz="0 0 1" />
     <limit effort="100" lower="-2.9670" upper="2.9670" velocity="5.2359" />
   </joint>
+
   <link name="link2">
     <visual>
       <geometry>
         <mesh filename="package://mz07l_description/meshes/visual/mz07_link2.dae" />
       </geometry>
-      <material name="white">
-        <color rgba="0 0 0 0.9"/>
-      </material>
+      <material name="white" />
     </visual>
     <collision>
       <geometry>
@@ -60,14 +61,13 @@
     <axis xyz="0 -1 0" />
     <limit effort="100" lower="-2.3561" upper="1.3962" velocity="4.8869" />
   </joint>
+
   <link name="link3">
     <visual>
       <geometry>
         <mesh filename="package://mz07l_description/meshes/visual/mz07_link3.dae" />
       </geometry>
-      <material name="white">
-        <color rgba="0 0 0 0.9"/>
-      </material>
+      <material name="white" />
     </visual>
     <collision>
       <geometry>
@@ -82,14 +82,13 @@
     <axis xyz="0 -1 0" />
     <limit effort="100" lower="-2.373648" upper="4.712389" velocity="6.283185" />
   </joint>
+
   <link name="link4">
     <visual>
       <geometry>
         <mesh filename="package://mz07l_description/meshes/visual/mz07_link4.dae" />
       </geometry>
-      <material name="white">
-        <color rgba="0 0 0 0.9"/>
-      </material>
+      <material name="white" />
     </visual>
     <collision>
       <geometry>
@@ -104,14 +103,13 @@
     <axis xyz="1 0 0" />
     <limit effort="100" lower="-3.316126" upper="3.316126" velocity="9.599311" />
   </joint>
+
   <link name="link5">
     <visual>
       <geometry>
         <mesh filename="package://mz07l_description/meshes/visual/mz07_link5.dae" />
       </geometry>
-      <material name="white">
-        <color rgba="0 0 0 0.9"/>
-      </material>
+      <material name="white" />
     </visual>
     <collision>
       <geometry>
@@ -126,15 +124,14 @@
     <axis xyz="0 -1 0" />
     <limit effort="100" lower="-2.0943" upper="2.0943" velocity="9.599311" />
   </joint>
+
   <link name="link6">
     <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="package://mz07l_description/meshes/visual/mz07_link6.dae" />
       </geometry>
-      <material name="white">
-        <color rgba="0 0 0 0.9"/>
-      </material>
+      <material name="white" />
     </visual>
     <collision>
       <geometry>
@@ -159,22 +156,23 @@
   <link name="gripper">
     <visual>
       <geometry>
-          <mesh filename="package://mz07l_description/meshes/visual/ssrs_gripper_V1.dae" />
+        <mesh filename="package://mz07l_description/meshes/visual/ssrs_gripper_V1.dae" />
       </geometry>
-      <material name="grey">
-        <color rgba="0.75 0.75 0.75 1"/>
+      <material name="Cyan">
+        <color rgba="0 1.0 1.0 1.0"/>
       </material>
     </visual>
     <collision>
       <geometry>
-          <mesh filename="package://mz07l_description/meshes/collision/ssrs_gripper_V1.stl" />
+        <mesh filename="package://mz07l_description/meshes/collision/ssrs_gripper_V1.stl" />
       </geometry>
     </collision>
   </link>
 
   <link name="tcp"/>
   <joint name="tcp_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.2702"/>
+    <origin rpy="0 0 0" xyz="0 0 0.265"/>
+    <!-- <origin rpy="0 0 0" xyz="0 0 0.2702"/> -->
     <parent link="gripper"/>
     <child link="tcp"/>
     <axis xyz="0 0 1"/>
@@ -183,10 +181,26 @@
   <joint name="camera_joint" type="fixed">
     <parent link="gripper" />
     <child link="camera_link" />
-    <origin rpy="0 -1.57079632679 0" xyz="-0.095 0 0.22" />
+    <origin rpy="0 -1.57079632679 0" xyz="-0.13 0 0.175" />
   </joint>
 
   <link name="camera_link" />
+
+  <joint name="ultrasonic_joint" type="fixed">
+    <parent link="tcp" />
+    <child link="ultrasonic_link" />
+    <origin rpy="0 -1.57079632679 0" xyz="0 0 -0.08" />
+  </joint>
+
+  <link name="ultrasonic_link" />
+
+  <!-- <joint name="pressure_joint" type="fixed">
+    <parent link="tcp" />
+    <child link="pressure_link" />
+    <origin rpy="0 0 0" xyz="0 0 -0.05" />
+  </joint> -->
+
+  <!-- <link name="pressure_link" /> -->
 
   <!-- <link name="gripper">
     <visual>

@@ -183,7 +183,7 @@
   <link name="gripper">
     <visual>
       <geometry>
-          <mesh filename="package://mz07l_description/meshes/visual/piab_single_cup.dae" />
+        <mesh filename="package://mz07l_description/meshes/visual/piab_single_cup.dae" />
       </geometry>
       <material name="grey">
         <color rgba="0.75 0.75 0.75 1"/>
@@ -191,7 +191,7 @@
     </visual>
     <collision>
       <geometry>
-          <mesh filename="package://mz07l_description/meshes/collision/piab_single_cup.stl" />
+        <mesh filename="package://mz07l_description/meshes/collision/piab_single_cup.stl" />
       </geometry>
     </collision>
   </link>

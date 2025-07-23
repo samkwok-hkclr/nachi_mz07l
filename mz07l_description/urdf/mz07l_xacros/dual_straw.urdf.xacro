@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="dual_straw" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="dual_straw" params="name parent *origin">
+
+    <joint name="gripper_joint" type="fixed">
+      <parent link="${parent}" />
+      <child link="gripper" />
+      <origin rpy="0 0 0.78539816339" xyz="0 0 0" />
+    </joint>
+
+    <link name="gripper">
+      <visual>
+        <geometry>
+          <mesh filename="package://mz07l_description/meshes/visual/ssrs_gripper_V1.dae" />
+        </geometry>
+        <material name="Cyan">
+          <color rgba="0 1.0 1.0 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://mz07l_description/meshes/collision/ssrs_gripper_V1.stl" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="tcp"/>
+    <joint name="tcp_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="0 0 0.265"/>
+      <!-- <origin rpy="0 0 0" xyz="0 0 0.2702"/> -->
+      <parent link="gripper"/>
+      <child link="tcp"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+
+    <joint name="camera_mount_joint" type="fixed">
+      <parent link="gripper" />
+      <child link="camera_mount_link" />
+      <origin rpy="0 -1.57079632679 0" xyz="-0.13 0 0.175" />
+    </joint>
+
+    <link name="camera_mount_link" />
+
+    <joint name="camera_base_joint" type="fixed">
+      <parent link="camera_mount_link" />
+      <child link="camera_base_link" />
+      <origin rpy="0 0 0" xyz="0.0115 0 -0.021" />
+    </joint>
+
+    <link name="camera_base_link" />
+
+    <joint name="ultrasonic_joint" type="fixed">
+      <parent link="tcp" />
+      <child link="ultrasonic_link" />
+      <origin rpy="0 -1.57079632679 0" xyz="0 0 -0.08" />
+    </joint>
+
+    <link name="ultrasonic_link" />
+    
+  </xacro:macro>
+  
+</robot>
